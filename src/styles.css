@@ -11,18 +11,25 @@ body {
 .auth-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
+  min-height: 80vh;
 }
 
 mat-card {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .full-width {
   width: 100%;
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+
+mat-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }

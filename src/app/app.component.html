@@ -1,11 +1,25 @@
 <mat-toolbar color="primary">
   <span>Angular Auth App</span>
   <span class="spacer"></span>
+
+  <!-- Always shown -->
   <a mat-button routerLink="">Home</a>
-  <a mat-button routerLink="login">Login</a>
-  <a mat-button routerLink="register">Register</a>
- <span class="spacer"></span>
-  <a mat-button (click)="logout()">Logout</a>
+
+  <!-- @if role === 'admin' -->
+  @if (role === 'admin') {
+  <a mat-button routerLink="/admin">Admin</a>
+  }
+
+  <!-- @if not logged in -->
+  @if (!role) {
+  <a mat-button routerLink="/login">Login</a>
+  <a mat-button routerLink="/register">Register</a>
+  }
+
+  <!-- @if logged in -->
+  @if (role) {
+  <a mat-button (click)="logOut()">Logout</a>
+  }
 </mat-toolbar>
 
 <router-outlet></router-outlet>

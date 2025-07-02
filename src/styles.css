@@ -33,3 +33,13 @@ mat-card-title {
   margin-bottom: 1rem;
   text-align: center;
 }
+body.loading::after {
+  content: "Loading...";
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555;
+  font-size: 16px;
+  z-index: 10000;
+}

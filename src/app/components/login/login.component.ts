@@ -36,6 +36,7 @@ export class LoginComponent {
         next: () => {
           alert('Login successful');
           // Redirect to home or another page if needed
+          window.location.href = '/';
         },
         error: (err) => alert('Error: ' + err.message),
       });

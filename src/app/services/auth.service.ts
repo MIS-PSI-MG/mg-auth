@@ -2,6 +2,7 @@ import { inject, Injectable, signal, effect } from '@angular/core';
 import {
   Auth,
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   updateProfile,
   user,
@@ -95,5 +96,9 @@ export class AuthService {
   get role(): 'admin' | 'user' | null {
     const user = this.currentUserSig();
     return user ? user.role : null;
+  }
+
+  resetPassword(email: string): Observable<void> {
+    return from(sendPasswordResetEmail(this.firebaseAuth, email));
   }
 }

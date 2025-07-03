@@ -28,6 +28,12 @@ export const routes: Routes = [
       import('./components/admin/admin.component').then((m) => m.AdminComponent)
     ),
   },
-
+  {
+    path: 'reset-password',
+    loadComponent: () =>
+      import('./components/reset-password/reset-password.component').then(
+        (m) => m.ResetPasswordComponent
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];
